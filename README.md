@@ -22,7 +22,8 @@
 - **constructor_standings.csv**: constructorStandingsId, raceId, constructorId, points, position, positionText, wins
 - **constructor_results.csv**: constructorResultsId, raceId, constructorId, points, status
 
-# First draft of the data processing pipeline (as an image)
+# First draft of the data processing pipeline
+![First Draft of the pipeline](images/pipeline.drawio.png)
 
 ## Data Collection
 ### Scrapy
