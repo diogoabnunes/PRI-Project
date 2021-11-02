@@ -35,3 +35,6 @@
 ### Data Cleaning
 - Remove position column from constructor_standings.csv, results.csv, driver_standings.csv. We already have positionText column that gives more information (position, R(etired), D(isqualified))
 
+- Remove duration column on pit_stops.csv (still have miliseconds column)
+
+- Remove time column on lap_times.csv and results.csv (we still have miliseconds column)
