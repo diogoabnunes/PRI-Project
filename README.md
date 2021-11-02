@@ -22,6 +22,8 @@
 - **constructor_standings.csv**: constructorStandingsId, raceId, constructorId, points, position, positionText, wins
 - **constructor_results.csv**: constructorResultsId, raceId, constructorId, points, status
 
+- extra: **fan_ratings.csv**: year, race number, grand prix name, p1, p2, p3, rating
+
 # First draft of the data processing pipeline
 ![First Draft of the pipeline](images/pipeline.drawio.png)
 
