@@ -33,6 +33,9 @@
 
 ## Data Preparation
 ### Data Cleaning
+- constructor_standings.csv: positionText tem a position ou E ou até mesmo -, e ainda não sei qual a diferença ao certo
+- results.csv: position removed; positionText to position; time removed; milliseconds to time;
+
 - Remove position column from constructor_standings.csv, results.csv, driver_standings.csv. We already have positionText column that gives more information (position, R(etired), D(isqualified))
 
 - Remove duration column on pit_stops.csv (still have miliseconds column)
