@@ -24,7 +24,6 @@ def cleanParagraph(s):
 
   text = s.text.replace('\xa0','') 
   text = text.replace('\n','') 
-
   return text
 
 for url in urls:
@@ -53,7 +52,6 @@ for url in urls:
       # paragraphs
       while(s is not None and not re.match('h[1-9]',s.name)):
         text = cleanParagraph(s)
-
 
         # not empty
         if text:
