@@ -8,21 +8,22 @@
 
 # Identification and briefly description of the datasets selected
 
-- **circuits.csv**: circuitId, circuitRef, name, location, country, latitude, longitude, altitude and URL to Wikipedia information
-- **drivers.csv**: driverId, driverRef, number, code (3 letters), forename, surname, date of birth, nationality and URL to Wikipedia information
-- **constructors.csv**: constructorId, constructorRef, name, nationality, URL to Wokipedia information
-- **seasons.csv**: year and URL to Wikipedia information about that season
-- **qualifying.csv**: id, raceId, driverId, constructorId, number, position, q1,q2,q3
+- **drivers.csv**: driverId, driverRef, number, code (3 letters), forename, surname, date of birth, nationality and Wiki URL
+- **constructors.csv**: constructorId, constructorRef, name, nationality, Wiki URL
+- **circuits.csv**: circuitId, circuitRef, name, location, country, and Wiki URL
+- **seasons.csv**: year and Wiki URL
+- **races.csv**: raceId, year, round, circuitId, name, date, time, Wiki URL
 - **pit_stops.csv**: raceId, driverId, stop, lap, time, duration, milliseconds
-- **races.csv**: raceId, year, round, circuitId, name, date, time, URL to Wikipedia information
+- **qualifying.csv**: id, raceId, driverId, constructorId, number, position, q1,q2,q3
 - **status.csv**: statusId, status ("Finished", "Disqualified", etc)
 - **results.csv**: resultId, raceId, driverId, constructorId, number, grid, position, positionText, positionOrder, points, laps, time, milliseconds, fastestLap, rank, fastestLapTime, fastestLapSpeed, statusId
 - **lap_times.csv**: raceId, driverId, lap, position, time, milliseconds
+
+## Discard?
 - **driver_standings.csv**: driverStandingsId, raceId, driverId, points, position, positionText, wins
 - **constructor_standings.csv**: constructorStandingsId, raceId, constructorId, points, position, positionText, wins
 - **constructor_results.csv**: constructorResultsId, raceId, constructorId, points, status
 
-- extra: **fan_ratings.csv**: year, race number, grand prix name, p1, p2, p3, rating
 
 # First draft of the data processing pipeline
 ![First Draft of the pipeline](images/pipeline.drawio.png)
