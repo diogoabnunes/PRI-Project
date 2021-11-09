@@ -7,11 +7,16 @@ races = pd.read_csv('../F1_Data/races.csv')
 paragraphs = []
 
 urls = races['url']
+raceId = 0
+
+data = {'raceId' : [], 'paragraph' : []}
 
 for url in urls:
+  raceId += 1
   html = urlopen(url)
   bs = BeautifulSoup(html,'html.parser')
   span = bs.find("span",{'id': 'Race'})
+
 
   if span is not None:
     parent = span.find_parent('h3')
@@ -25,7 +30,12 @@ for url in urls:
           for a in s.findAll('a'):
             a.replaceWithChildren()
 
-          # output to database here
-          print(s.text)
+          text = s.text.replace('\n','') 
+          data['raceId'].append(raceId)
+          data['paragraph'].append(text)
 
         s = s.find_next_sibling()
+
+
+df = pd.DataFrame(data=data)
+df.to_csv('race_text.csv',index=False)
