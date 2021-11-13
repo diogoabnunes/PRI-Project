@@ -30,6 +30,7 @@ for i in range(len(pages)):
     pageId = pageIds[i]
     pageName = pageNames[i]
     url = urls[i]
+    print(f'pageName: {pageName}')
 
     html = urlopen(urls[i])
     bs = BeautifulSoup(html, 'html.parser')

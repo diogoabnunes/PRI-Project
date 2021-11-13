@@ -13,17 +13,9 @@
 - **circuits.csv**: circuitId, circuitRef, name, location, country, and Wiki URL
 - **seasons.csv**: year and Wiki URL
 - **races.csv**: raceId, year, round, circuitId, name, date, time, Wiki URL
-- **pit_stops.csv**: raceId, driverId, stop, lap, time, duration, milliseconds
 - **qualifying.csv**: id, raceId, driverId, constructorId, number, position, q1,q2,q3
 - **status.csv**: statusId, status ("Finished", "Disqualified", etc)
 - **results.csv**: resultId, raceId, driverId, constructorId, number, grid, position, positionText, positionOrder, points, laps, time, milliseconds, fastestLap, rank, fastestLapTime, fastestLapSpeed, statusId
-- **lap_times.csv**: raceId, driverId, lap, position, time, milliseconds
-
-## Discard?
-- **driver_standings.csv**: driverStandingsId, raceId, driverId, points, position, positionText, wins
-- **constructor_standings.csv**: constructorStandingsId, raceId, constructorId, points, position, positionText, wins
-- **constructor_results.csv**: constructorResultsId, raceId, constructorId, points, status
-
 
 # First draft of the data processing pipeline
 ![First Draft of the pipeline](images/pipeline.drawio.png)
