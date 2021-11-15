@@ -4,6 +4,6 @@
 
 ![Pipeline1](docs/pipeline_v1.1.png)
 
-[Report](docs/report_m1.pdf)
+[Report](docs/M1/report-23.pdf)
 
-[Slides](docs/slides_m1.pdf)
+[Slides](docs/M1/demo-23.pdf)
