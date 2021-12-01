@@ -5,7 +5,7 @@
 - docker run --name my_solr -p 8983:8983 solr:8.10
 
 ## Creating collection/core
-- docker exec eb08a48b993d bin/solr create_core -c courses
+- docker exec 050b84d33977 bin/solr create_core -c courses
 
 ## Populating collection
 - **API**: curl -X POST -H 'Content-type:application/json' --data-binary @C:\Users\'Diogo Nunes'\'OneDrive - Universidade do Porto'\FEUP\Formula1\tutorial_solr\meic_courses.json localhost:8983/solr/courses/update?commit=true

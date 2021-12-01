@@ -1,10 +1,13 @@
 # Solr commands
 
 ## Running solr
-- docker run --name f1_solr -p 9000:8983 solr:8.10
+- docker desktop
 
 ## Creating collection/core
-- docker exec b9e4fdb6be5d bin/solr create_core -c courses
+- docker exec 050b84d33977 bin/solr create_core -c races
 
 ## Populating collection
-- **API**: curl -X POST -H 'Content-type:application/csv' --data-binary @C:\Users\'Diogo Nunes'\'OneDrive - Universidade do Porto'\FEUP\Formula1\processed_data\circuits_text.csv localhost:9000/solr/f1/update?commit=true
+- **API**: curl -X POST -H 'Content-type:application/csv' --data-binary @C:\Users\'Diogo Nunes'\'OneDrive - Universidade do Porto'\FEUP\Formula1\documentos_resultado\races_joined.csv localhost:8983/solr/races/update?commit=true
+
+## Deleting collection/core
+- docker exec 050b84d33977 bin/solr delete -c races

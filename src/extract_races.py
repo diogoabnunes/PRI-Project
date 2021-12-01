@@ -8,7 +8,7 @@ races = pd.read_csv('../F1_Data/races.csv')
 paragraphs = []
 
 urls = races['url']
-raceId = 0
+racesId = races['raceId']
 
 data = {'raceId' : [], 'paragraph' : []}
 
@@ -26,8 +26,8 @@ def cleanParagraph(s):
   text = text.replace('\n','') 
   return text
 
-for url in urls:
-  raceId += 1
+for url,raceId in zip(urls,racesId):
+  print(raceId)
   html = urlopen(url)
   bs = BeautifulSoup(html,'html.parser')
   first_p = bs.p
