@@ -1,0 +1,2 @@
+crash, collision, collided, crashed, crashes
+one, 1
