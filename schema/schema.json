@@ -1,0 +1,46 @@
+{
+	"add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.EnglishMinimalStemFilterFactory"},
+                    {"class":"solr.ManagedSynonymGraphFilterFactory", "managed":"english"},
+                    {"class":"solr.FlattenGraphFilterFactory"}
+
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.EnglishMinimalStemFilterFactory"},
+                    {"class":"solr.ManagedSynonymGraphFilterFactory", "managed":"english"}
+                    
+                ]
+            }
+        }
+    ],
+    "add-field": [
+        {
+            "name": "race_text",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "qualifying_text",
+            "type": "text",
+            "indexed": true
+        }
+    ]
+}
+
