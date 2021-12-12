@@ -30,11 +30,11 @@ The first milestone is achieved with the preparation and characterisation of the
 Work on these tasks depends on the nature, volume, organization and accessibility of the selected datasets. As a result of this milestone, a well-documented and reproducible pipeline of data processing is expected. Groups must include the Makefile in the milestone submission. 
 
 The following list has a sample of the actions which are required: 
-- [ ] search repositories for datasets; 
-- [ ] select convenient data subsets; 
-- [ ] assess the authority of the data source and data quality; 
-- [ ] perform exploratory data analysis; 
-- [ ] prepare and document a data processing pipeline; 
+- [x] search repositories for datasets; 
+- [x] select convenient data subsets; 
+- [x] assess the authority of the data source and data quality; 
+- [x] perform exploratory data analysis; 
+- [x] prepare and document a data processing pipeline; 
 - [ ] characterize the datasets, identifying and describing some of their properties; 
 - [ ] identify the conceptual model for the data domain; 
 - [ ] identify follow-up information needs in the data domain. 
@@ -47,10 +47,10 @@ This task makes use of state-of-the-art retrieval tools and involves the view of
 Also included in this milestone is a brief description of the ideas to explore in the development of the final search system, i.e. Milestone #3. 
 
 The following list has a sample of the actions which are required: 
-- [ ] choose the information retrieval tool (Solr, Elasticsearch, Lucene, Terrier, …); 
-- [ ] analyse the documents and identify their indexable components; 
-- [ ] use the selected tool to build the indexes; 
-- [ ] use the selected tool to configure and execute the queries; 
+- [x] choose the information retrieval tool (Solr, Elasticsearch, Lucene, Terrier, …); 
+- [x] analyse the documents and identify their indexable components; 
+- [x] use the selected tool to build the indexes; 
+- [x] use the selected tool to configure and execute the queries; 
 - [ ] demonstrate the indexing and retrieval processes; 
 - [ ] manually evaluate the returned results; 
 - [ ] evaluate the results obtained for the defined information needs. 

@@ -1,2 +1,4 @@
-crash, collision, collided, crashed, crashes
-one, 1
+couch,sofa,divan
+teh => the
+huge,ginormous,humungous => large
+small => tiny,teeny,weeny
