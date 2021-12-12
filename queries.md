@@ -7,3 +7,10 @@
 4. 
 5.  
 6. 
+
+
+# Informação need
+campos inderetos
+queries ambiguas
+
+- acidentes nos ultimos 10 anos 
