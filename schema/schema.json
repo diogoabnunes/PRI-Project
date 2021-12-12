@@ -11,7 +11,7 @@
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
-                    {"class":"solr.ManagedSynonymGraphFilterFactory", "managed":"english"},
+                    {"class":"solr.ManagedSynonymGraphFilterFactory", "synonyms":"synonyms.txt"},
                     {"class":"solr.FlattenGraphFilterFactory"}
 
                 ]
@@ -24,7 +24,7 @@
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
-                    {"class":"solr.ManagedSynonymGraphFilterFactory", "managed":"english"}
+                    {"class":"solr.ManagedSynonymGraphFilterFactory", "synonyms":"synonyms.txt"}
                     
                 ]
             }
