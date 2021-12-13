@@ -12,7 +12,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
                     {"class":"solr.ManagedSynonymGraphFilterFactory", "managed": "english"},
-                    {"class":"solr.SynonymGraphFilterFactory", "synonyms": "synonyms.txt"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms": "synonyms.txt", "ignoreCase": true },
                     {"class":"solr.FlattenGraphFilterFactory"}
                 ]
             },
@@ -25,7 +25,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
                     {"class":"solr.ManagedSynonymGraphFilterFactory", "managed": "english"},
-                    {"class":"solr.SynonymGraphFilterFactory", "synonyms": "synonyms.txt"}
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms": "synonyms.txt", "ignoreCase": true }
                 ]
             }
         }
@@ -43,6 +43,11 @@
         },
         {
             "name": "name",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "raceId",
             "type": "text",
             "indexed": true
         }

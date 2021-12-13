@@ -1,4 +1,4 @@
-couch,sofa,divan
-teh => the
-huge,ginormous,humungous => large
-small => tiny,teeny,weeny
+crash, collision, crashed, collided, touch, touched, accident, incident
+one, 1
+overtake, pass
+wheel, tyre
