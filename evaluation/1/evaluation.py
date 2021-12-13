@@ -65,7 +65,7 @@ df = pd.DataFrame([['Metric','Value']] +
     ]
 )
 
-with open('1/results.tex','w') as tf:
+with open('1/results1.tex','w') as tf:
     tf.write(df.to_latex())
 
 # -------------------------------------------------------------------------------------
@@ -105,4 +105,4 @@ for idx, step in enumerate(recall_values):
 
 disp = PrecisionRecallDisplay([precision_recall_match.get(r) for r in recall_values], recall_values)
 disp.plot()
-plt.savefig('1/precision_recall.pdf')
+plt.savefig('1/precision_recall1.pdf')

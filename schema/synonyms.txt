@@ -1,4 +1,0 @@
-crash, collision, crashed, collided, touch, touched, accident, incident
-one, 1
-overtake, pass
-wheel, tyre

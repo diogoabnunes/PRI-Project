@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 
 QRELS_FILE = "3/qrels3.txt"
-QUERY_URL = ... # to change
+QUERY_URL = "http://localhost:8983/solr/races/select?indent=true&q.op=AND&q=race_text%3A%22rain%22%20race_text%3A%22Vettel%20win%22~5"
 
 # Read qrels to extract relevant documents
 relevant = list(map(lambda el: el.strip(), open(QRELS_FILE).readlines()))
@@ -28,7 +28,7 @@ def ap(results, relevant):
         len([
             doc 
             for doc in results[:idx]
-            if doc['id'] in relevant
+            if doc['raceId'] in relevant
         ]) / idx 
         for idx in range(1, len(results))
     ]
@@ -37,12 +37,12 @@ def ap(results, relevant):
 @metric
 def p10(results, relevant, n=10):
     """Precision at N"""
-    return len([doc for doc in results[:n] if doc['id'] in relevant])/n
+    return len([doc for doc in results[:n] if doc['raceId'] in relevant])/n
 
 @metric
 def r10(results, relevant, n=10):
     """Recall at N"""
-    return len([doc for doc in results[:n] if doc['id'] in relevant])/(len(relevant))
+    return len([doc for doc in results[:n] if doc['raceId'] in relevant])/(len(relevant))
 
 def calculate_metric(key, results, relevant):
     return metrics[key](results, relevant)
@@ -62,7 +62,7 @@ df = pd.DataFrame([['Metric','Value']] +
     ]
 )
 
-with open('results.tex','w') as tf:
+with open('3/results3.tex','w') as tf:
     tf.write(df.to_latex())
 
 # -------------------------------------------------------------------------------------
@@ -102,4 +102,4 @@ for idx, step in enumerate(recall_values):
 
 disp = PrecisionRecallDisplay([precision_recall_match.get(r) for r in recall_values], recall_values)
 disp.plot()
-plt.savefig('3/precision_recall.pdf')
+plt.savefig('3/precision_recall3.pdf')

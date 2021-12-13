@@ -7,12 +7,15 @@ import requests
 import pandas as pd
 
 QRELS_FILE = "2/qrels2.txt"
-QUERY_URL = ... # to change
+QUERY_URL = "http://localhost:8983/solr/races/select?fq=date%3A%5BNOW-1YEAR%2FYEAR%20TO%20NOW%5D&indent=true&q.op=OR&q=race_text%3A%22incident%20Verstappen%22~10%20race_text%3A%22crash%20Verstappen%22~10%20race_text%3A%22accident%20Verstappen%22~10%20race_text%3A%22collision%20Verstappen%22~10"
 
 # Read qrels to extract relevant documents
 relevant = list(map(lambda el: el.strip(), open(QRELS_FILE).readlines()))
+print(relevant)
 # Get query results from Solr instance
 results = requests.get(QUERY_URL).json()['response']['docs']
+for result in results:
+    print(result['raceId'])
 
 # -------------------------------------------------------------------------------------
 
@@ -28,7 +31,7 @@ def ap(results, relevant):
         len([
             doc 
             for doc in results[:idx]
-            if doc['id'] in relevant
+            if doc['raceId'] in relevant
         ]) / idx 
         for idx in range(1, len(results))
     ]
@@ -37,12 +40,12 @@ def ap(results, relevant):
 @metric
 def p10(results, relevant, n=10):
     """Precision at N"""
-    return len([doc for doc in results[:n] if doc['id'] in relevant])/n
+    return len([doc for doc in results[:n] if doc['raceId'] in relevant])/n
 
 @metric
 def r10(results, relevant, n=10):
     """Recall at N"""
-    return len([doc for doc in results[:n] if doc['id'] in relevant])/(len(relevant))
+    return len([doc for doc in results[:n] if doc['raceId'] in relevant])/(len(relevant))
 
 def calculate_metric(key, results, relevant):
     return metrics[key](results, relevant)
@@ -62,7 +65,7 @@ df = pd.DataFrame([['Metric','Value']] +
     ]
 )
 
-with open('results.tex','w') as tf:
+with open('2/results2.tex','w') as tf:
     tf.write(df.to_latex())
 
 # -------------------------------------------------------------------------------------
@@ -102,4 +105,4 @@ for idx, step in enumerate(recall_values):
 
 disp = PrecisionRecallDisplay([precision_recall_match.get(r) for r in recall_values], recall_values)
 disp.plot()
-plt.savefig('2/precision_recall.pdf')
+plt.savefig('2/precision_recall2.pdf')

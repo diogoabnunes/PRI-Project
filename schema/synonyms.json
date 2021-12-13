@@ -1,0 +1,8 @@
+{
+    "managedMap":{
+        "crash": ["collision", "collided", "touch", "accident", "incident", "retire"],
+        "overtake": ["pass"],
+        "wheel": ["tyre"],
+        "win": ["champion"]
+    }
+}
