@@ -50,6 +50,11 @@
             "name": "raceId",
             "type": "text",
             "indexed": true
+        },
+        {
+            "name": "text",
+            "type": "text",
+            "indexed": true
         }
     ]
 }
