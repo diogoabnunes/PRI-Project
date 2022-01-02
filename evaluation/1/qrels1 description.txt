@@ -1,0 +1,14 @@
+# information_systems_qrels.txt
+# A relevance judgment can be as simple as this,
+# a list of relevant documents for a given topic/need/query
+
+818 # Indianapolis 500, 1952 Ruutman
+764 # US GP, 1959
+629 # Italian GP, 1972
+952 # Spanish GP, 2016 Verstappen
+31 # Italian GP, 2008 Vettel
+355 # Abu Dhabi GP, 2010 Vettel Champion
+120 # Hungarian GP, 2003 Alonso 
+39 # Spanish GP, 2007 Hamilton (youngest driver to lead the championship)
+254 # Pacific GP, 1995
+855 # Japanese GP, 2001 (Vettel champion x2)

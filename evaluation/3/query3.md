@@ -1,0 +1,1 @@
+q: race_text:"rain" race_text:"Vettel win"~5
