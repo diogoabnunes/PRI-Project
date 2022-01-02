@@ -17,9 +17,20 @@ def cleanParagraph(s):
   text = s.text.replace('\xa0','') 
   text = text.replace('\n','') 
   text = text.replace('(key)','')
+  text = text.replace('.', '')
+  text = text.replace('Season still in progress.', '')
   text = text.replace('* Season still in progress.','')
+  text = text.replace('† Not eligible for points', '')
+  text = text.replace('‡ Not eligible for points.', '')
   text = text.replace('(*) Season still in progress.','')  
+  text = text.replace('(Races in bold indicate pole position; races in italics indicate fastest lap)', '')
   text = text.strip()
+
+  if text.endswith(':'): text = ''
+  elif text.startswith('(') and text.endswith(')'): text = ''
+  elif text.startswith('*') or text.startswith('†') or text.startswith('‡'): text = ''
+  elif not text.endswith('.'): text = ''
+
   return text
 
 drivers = pd.read_csv("../F1_Data/drivers.csv")
