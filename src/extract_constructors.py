@@ -20,6 +20,12 @@ def cleanParagraph(s):
   text = text.replace('* Season still in progress.','')
   text = text.replace('(*) Season still in progress.','')  
   text = text.strip()
+
+  if text.endswith(':'): text = ''
+  elif text.startswith('(') and text.endswith(')'): text = ''
+  elif text.startswith('*') or text.startswith('†') or text.startswith('‡'): text = ''
+  elif not text.endswith('.'): text = ''
+
   return text
 
 constructors = pd.read_csv("../F1_Data/constructors.csv")

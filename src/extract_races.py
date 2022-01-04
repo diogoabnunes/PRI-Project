@@ -24,6 +24,12 @@ def cleanParagraph(s):
 
   text = s.text.replace('\xa0','') 
   text = text.replace('\n','') 
+
+  if text.endswith(':'): text = ''
+  elif text.startswith('(') and text.endswith(')'): text = ''
+  elif text.startswith('*') or text.startswith('†') or text.startswith('‡'): text = ''
+  elif not text.endswith('.'): text = ''
+
   return text
 
 for url,raceId in zip(urls,racesId):

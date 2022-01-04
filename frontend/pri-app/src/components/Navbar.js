@@ -1,4 +1,4 @@
-import {Navbar,Container, Form, Button, FormControl, Col} from "react-bootstrap";
+import {Navbar,Container, Form, Button, FormControl} from "react-bootstrap";
 
 export function NavBar() {
   return(
@@ -16,10 +16,9 @@ export function NavBar() {
       </Navbar.Brand>
       <Form className="d-flex" >
           <FormControl
-            className="w-50"
+            className="w-50 me-2"
             type="search"
             placeholder="Search"
-            className="me-2"
             aria-label="Search"
           />
         <Button variant="outline-light">Search</Button>

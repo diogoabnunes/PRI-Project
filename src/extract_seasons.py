@@ -21,6 +21,12 @@ def cleanParagraph(s):
   text = text.replace('(*) Season still in progress.','')  
   text = text.replace('Notes:','')
   text = text.strip()
+
+  if text.endswith(':'): text = ''
+  elif text.startswith('(') and text.endswith(')'): text = ''
+  elif text.startswith('*') or text.startswith('†') or text.startswith('‡'): text = ''
+  elif not text.endswith('.'): text = ''
+
   return text
 
 seasons = pd.read_csv("../F1_Data/seasons.csv")

@@ -15,7 +15,13 @@ def cleanParagraph(s):
     return ''
 
   text = s.text.replace('\xa0','') 
-  text = text.replace('\n','') 
+  text = text.replace('\n','')
+
+  if text.endswith(':'): text = ''
+  elif text.startswith('(') and text.endswith(')'): text = ''
+  elif text.startswith('*') or text.startswith('†') or text.startswith('‡'): text = ''
+  elif not text.endswith('.'): text = ''
+
   return text
 
 pages = pd.read_csv("../F1_Data/f1pages.csv")
