@@ -8,4 +8,4 @@ pages_df = pages_text.groupby(['pageId'], as_index = False).agg({'text': '\n'.jo
 
 ## escrever num csv
 print(pages_df)
-pages_df.to_csv("../final_csvs/pages_text.csv", index=False)
+pages_df.to_csv("../documentos_resultado/pages_text.csv", index=False)
