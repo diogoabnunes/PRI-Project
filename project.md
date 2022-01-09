@@ -60,4 +60,8 @@ The third milestone is achieved with the development of the final version of the
 
 For this milestone, each group is expected to explore innovative approaches and ideas, and will heavily depend on the context and data of each group. Additionally, an extended evaluation of the results and a comparison with the previous version of the search system is also expected. 
 
-As examples of topics to explore, groups may: incorporate new information retrieval algorithms; expand the information available for each document by adding and linking new datasets; work on user interfaces by developing a frontend for the search system; etc.
+As examples of topics to explore, groups may:
+- [ ] incorporate new information retrieval algorithms;
+- [x] expand the information available for each document by adding and linking new datasets;
+- [ ] work on user interfaces by developing a frontend for the search system;
+- [ ] etc.

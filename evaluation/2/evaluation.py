@@ -7,11 +7,11 @@ import requests
 import pandas as pd
 
 QRELS_FILE = "2/qrels2.txt"
-QUERY_URL = "http://localhost:8983/solr/races/select?fq=date%3A%5BNOW-1YEAR%2FYEAR%20TO%20NOW%5D&indent=true&q.op=OR&q=race_text%3A%22incident%20Verstappen%22~10%20race_text%3A%22crash%20Verstappen%22~10%20race_text%3A%22accident%20Verstappen%22~10%20race_text%3A%22collision%20Verstappen%22~10"
+QUERY_URL = "http://localhost:8983/solr/races_schema/select?fq=date%3A%5BNOW-1YEAR%2FYEAR%20TO%20NOW%5D&indent=true&q.op=OR&q=race_text%3A%22incident%20Verstappen%22~10%20race_text%3A%22crash%20Verstappen%22~10%20race_text%3A%22accident%20Verstappen%22~10%20race_text%3A%22collision%20Verstappen%22~10"
 
 # Read qrels to extract relevant documents
 relevant = list(map(lambda el: el.strip(), open(QRELS_FILE).readlines()))
-print(relevant)
+print("Relevant: ", relevant)
 # Get query results from Solr instance
 results = requests.get(QUERY_URL).json()['response']['docs']
 for result in results:
@@ -38,12 +38,12 @@ def ap(results, relevant):
     return sum(precision_values)/len(precision_values)
 
 @metric
-def p10(results, relevant, n=10):
+def p4(results, relevant, n=4):
     """Precision at N"""
     return len([doc for doc in results[:n] if doc['raceId'] in relevant])/n
 
 @metric
-def r10(results, relevant, n=10):
+def r4(results, relevant, n=4):
     """Recall at N"""
     return len([doc for doc in results[:n] if doc['raceId'] in relevant])/(len(relevant))
 
@@ -53,8 +53,8 @@ def calculate_metric(key, results, relevant):
 # Define metrics to be calculated
 evaluation_metrics = {
     'ap': 'Average Precision',
-    'p10': 'Precision at 10 (P@10)',
-    'r10': 'Recall at 10 (R@10)'
+    'p4': 'Precision at 4 (P@4)',
+    'r4': 'Recall at 4 (R@4)'
 }
 
 # Calculate all metrics and export results as LaTeX table

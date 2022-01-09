@@ -36,4 +36,4 @@ plt.axis("off")
 plt.show()
 
 # Save the image in the img folder:
-wordcloud_circuit_text.to_file("../docs/common_words_circuit.png")
+wordcloud_circuit_text.to_file("../docs/common_words/circuit.png")
