@@ -7,15 +7,30 @@ import requests
 import pandas as pd
 
 QRELS_FILE = "1/qrels1.txt"
-QUERY_URL = "http://localhost:8983/solr/races/query?q=race_text:youngest%20race_text:driver%20race_text:win&q.op=AND&indent=true&rows=18"
+QUERY_URL = "http://localhost:8983/solr/races_schema/query?q=race_text:youngest%20race_text:driver%20race_text:win&q.op=AND&indent=true&rows=18"
 
 # Read qrels to extract relevant documents
 relevant = list(map(lambda el: el.strip(), open(QRELS_FILE).readlines()))
 print(relevant)
 # Get query results from Solr instance
 results = requests.get(QUERY_URL).json()['response']['docs']
+
+TOTAL = 2268
+TP = 0
+FP = 0
+FN = 0
+TN = 0 # TO FILL
+
 for result in results:
-    print(result['raceId'])
+    if(result['raceId'] in relevant):
+        print("TP:", result['raceId'])
+        TP += 1
+    else:
+        print("TN:", result['raceId'])
+        FP += 1
+
+FN = len(relevant) - TP
+TN = TOTAL - (TP + FP + FN)
 
 # -------------------------------------------------------------------------------------
 
@@ -43,10 +58,21 @@ def p10(results, relevant, n=10):
     return len([doc for doc in results[:n] if doc['raceId'] in relevant])/n
 
 @metric
-def r10(results, relevant, n=10):
-    """Recall at N"""
-    return len([doc for doc in results[:n] if doc['raceId'] in relevant])/(len(relevant))
+def precision(results, relevant):
+    """Precision"""
+    return TP / (TP + FP)
 
+@metric
+def recall(results, relevant):
+    """Recall"""
+    return TP / (TP + FN)
+
+@metric
+def accuracy(results, relevant):
+    """Accuracy"""
+    return (TP + TN) / (TP + FP + FN + TN)
+
+@metric
 def calculate_metric(key, results, relevant):
     return metrics[key](results, relevant)
 
@@ -54,7 +80,8 @@ def calculate_metric(key, results, relevant):
 evaluation_metrics = {
     'ap': 'Average Precision',
     'p10': 'Precision at 10 (P@10)',
-    'r10': 'Recall at 10 (R@10)'
+    'precision': 'Precision',
+    'recall': 'Recall',
 }
 
 # Calculate all metrics and export results as LaTeX table
