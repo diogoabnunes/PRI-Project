@@ -8,6 +8,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
+                    {"class":"solr.StopFilterFactory", "words":"stopwords.txt", "ignoreCase":"true"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
@@ -21,6 +22,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
+                    {"class":"solr.StopFilterFactory", "words":"stopwords.txt", "ignoreCase":"true"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.EnglishMinimalStemFilterFactory"},
@@ -32,13 +34,31 @@
     ],
     "add-field": [
         {
+            "name": "qualifying_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
             "name": "race_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "category",
             "type": "text",
             "indexed": true
         },
         {
-            "name": "qualifying_text",
-            "type": "text",
+            "name": "raceId",
+            "type": "pint",
             "indexed": true
         },
         {
@@ -47,13 +67,83 @@
             "indexed": true
         },
         {
-            "name": "raceId",
+            "name": "year",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name": "round",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name": "circuitId",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name": "date",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "time",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "url",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "driverId",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name": "number",
+            "type": "pfloat",
+            "indexed": true
+        },
+        {
+            "name": "firstName",
             "type": "text",
             "indexed": true
         },
         {
-            "name": "text",
+            "name": "lastName",
             "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "birth",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "nationality",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "constructorId",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name": "location",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "country",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "pageId",
+            "type": "pint",
             "indexed": true
         }
     ]
