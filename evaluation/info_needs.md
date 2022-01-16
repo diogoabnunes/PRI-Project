@@ -1,10 +1,10 @@
 # Information Needs
 
 ## Races (Qualifying + Race)
-- Incidents between drivers
-- Overtakes between drivers
-- Races where a certain driver started from 1st place
-- Races where a certain driver won
+- Youngest driver to win a race or a championship (at their time)
+- Incidents involving a certain driver
+- Races where a certain driver made overtakes
+- (Races where a certain driver started from 1st place)
 
 ## Drivers
 - Teammates of a certain driver
@@ -20,6 +20,7 @@
 - Teams engine suppliers throughout the years (ex. Red Bull is constantly changing)
 - Drivers from a certain team throughout the years
 - Check if a certain team already won a championship
+when did x team won a championship
 
 ## Circuits
 - Circuits from a certain country

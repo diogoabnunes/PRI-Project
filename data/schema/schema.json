@@ -46,7 +46,31 @@
             "multiValued": true
         },
         {
-            "name": "text",
+            "name": "driver_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "constructor_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "circuit_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "page_text",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "season_text",
             "type": "text",
             "indexed": true,
             "multiValued": true
