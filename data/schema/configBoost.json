@@ -1,0 +1,16 @@
+{
+    "update-requesthandler": {
+        "name": "/select",
+        "class": "solr.SearchHandler",
+        "defaults": {
+            "echoParams": "explicit",
+            "rows": 10,
+            "fl": "*, score",
+            "preferLocalShards": false,
+            "defType": "edismax",
+            "qf": "race_text^10 qualifying_text driver_text constructor_text circuit_text season_text page_text name^100 nationality firstName lastName year location",
+            "pf": "race_text^10 qualifying_text driver_text constructor_text circuit_text season_text page_text name^100 nationality firstName lastName year location",
+            "ps": "10"
+        }
+    }
+}
