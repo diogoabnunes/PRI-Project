@@ -2,8 +2,18 @@
 
 ## Milestone 1
 
-![Pipeline1](docs/pipeline_v1.1.png)
+[Report1](docs/M1/report-23.pdf)
 
-[Report](docs/M1/report-23.pdf)
+[Slides1](docs/M1/demo-23.pdf)
 
-[Slides](docs/M1/demo-23.pdf)
+## Milestone 2
+
+[Report2](docs/M2/report-23.pdf)
+
+[Slides2](docs/M2/demo-23.pdf)
+
+## Milestone 3
+
+[Report2](docs/M3/report-23.pdf)
+
+[Slides2](docs/M3/demo-23.pdf)
