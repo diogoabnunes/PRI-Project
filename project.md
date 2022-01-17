@@ -35,9 +35,9 @@ The following list has a sample of the actions which are required:
 - [x] assess the authority of the data source and data quality; 
 - [x] perform exploratory data analysis; 
 - [x] prepare and document a data processing pipeline; 
-- [ ] characterize the datasets, identifying and describing some of their properties; 
-- [ ] identify the conceptual model for the data domain; 
-- [ ] identify follow-up information needs in the data domain. 
+- [x] characterize the datasets, identifying and describing some of their properties; 
+- [x] identify the conceptual model for the data domain; 
+- [x] identify follow-up information needs in the data domain. 
 
 #### Milestone #2: Information Retrieval 
 The second milestone is achieved with the implementation and use of an information retrieval tool on the project datasets and its exploration with free-text queries.  
@@ -51,9 +51,9 @@ The following list has a sample of the actions which are required:
 - [x] analyse the documents and identify their indexable components; 
 - [x] use the selected tool to build the indexes; 
 - [x] use the selected tool to configure and execute the queries; 
-- [ ] demonstrate the indexing and retrieval processes; 
-- [ ] manually evaluate the returned results; 
-- [ ] evaluate the results obtained for the defined information needs. 
+- [x] demonstrate the indexing and retrieval processes; 
+- [x] manually evaluate the returned results; 
+- [x] evaluate the results obtained for the defined information needs. 
 
 #### Milestone #3: Search System 
 The third milestone is achieved with the development of the final version of the search system. This version is an improvement over the previous milestone, making use of features and techniques with the goal of improving the quality of the search results. 
