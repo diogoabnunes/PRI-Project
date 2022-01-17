@@ -1,8 +1,8 @@
-docker exec 8d4b10ab44f1 bin/solr delete -c races_default
-docker exec 8d4b10ab44f1 bin/solr delete -c races_schema
+docker exec 1eec8daa181d bin/solr delete -c races_default
+docker exec 1eec8daa181d bin/solr delete -c races_schema
 
-docker exec 8d4b10ab44f1 bin/solr create_core -c races_default
-docker exec 8d4b10ab44f1 bin/solr create_core -c races_schema
+docker exec 1eec8daa181d bin/solr create_core -c races_default
+docker exec 1eec8daa181d bin/solr create_core -c races_schema
 
 # Default (without schema)
 curl -X POST -H 'Content-type:application/json' --data-binary @./data/final_json/races.json localhost:8983/solr/races_default/update?commit=true
