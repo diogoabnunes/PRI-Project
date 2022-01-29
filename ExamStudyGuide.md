@@ -147,7 +147,17 @@ For a document, the bag of words model, the exact ordering of the terms in a doc
      - lowest when the term occurs in virtually all documents.
 
 4. How do you rank documents in the vector model?
-   - TODO:
+   - Vector Space Model:
+     - Each document is represented as a vector, with a component vector for each dictionary term.
+     - td-idf weights are used as components.
+     - Thus, the set of documents in a collection may be viewed as a set of vectors in a vector space, in which there is one axis for each term.
+   - Cosine Similarity:
+     - Similarity between 2 documents is given by the cosine of the angle between the 2 vector representations of the documents.
+     - sim(d1, d2) = (vector(d1).vector(d2))/(|vector(d1)|*|vector(d2)|)
+   - Queries as Vectors:
+     - Queries can also be represented as vectors in a n-dimensional space, being n the number of terms in the query.
+     - Basically, queries are viewed as very short documents.
+     - The top ranked results for a given query are thus the documents whose vectors have the highest cosine similarity in comparison with the query vector. 
 
 References:
 - [Manning, Chap. 2 (2.2) and Chap. 6 (6.2, 6.3)](https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf)
