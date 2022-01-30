@@ -178,7 +178,7 @@ References:
 
 2. What is precision at k, R-precision?
    - Precision at k: Precision at fixed low levels of retrieved results (such as 10 or 30 documents).
-   - R-Precision: If there are |Rel| relevant documents for a query, we examine the top |Rel| results of a system, and fint that r are relevant, then by definition, not only is the precision r/|Rel|, but also the recall.
+   - R-Precision: If there are |Rel| relevant documents for a query, we examine the top |Rel| results of a system, and find that r are relevant, then by definition, not only is the precision r/|Rel|, but also the recall.
      - Requires having a set of known relevant documents Rel, from which we calculate the precision of the top Rel documents returned.
      - It adjusts for the size of the set of relevant documents. A perfect system could score 1 for each query, whereas, even a perfect system could only achieve a precision at 20 of 0.4 if there were only 8 relevant documents. 
 
