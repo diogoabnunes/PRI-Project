@@ -131,12 +131,12 @@ References:
 ## Vector Model
 
 1. What is the bag of words model for a document?
-For a document, the bag of words model, the exact ordering of the terms in a document is ignored but the number of occurrences of each term is material (in contrast to Boolean retrieval). We only retain information on the number of occurrences of each term.
+   - For a document, the bag of words model, the exact ordering of the terms in a document is ignored but the number of occurrences of each term is material (in contrast to Boolean retrieval). We only retain information on the number of occurrences of each term.
 
 2. What is term frequency, collection frequency, document frequency, inverse document frequency?
    - Term Frequency (tf): number of times a term occurs in a document.
    - Collection frequency: total number of times each term appears in the document collection.
-   - Document frequency (df): number of documents that contain a term.
+   - Document frequency (df): number of documents that contain a term. Always >= 1.
    - Inverse Document Frequency (idf): concept to incorporate the document frequency in the weight of a term: idf(term) = log(Total no. documents / df(term))
 
 3. How do you calculate td-idf weights?
@@ -159,6 +159,10 @@ For a document, the bag of words model, the exact ordering of the terms in a doc
      - Basically, queries are viewed as very short documents.
      - The top ranked results for a given query are thus the documents whose vectors have the highest cosine similarity in comparison with the query vector. 
 
+Examples: 6.2, 6.3, 6.4.
+
+Exercises: 6.8, 6.9, 6.10, 6.11, 6.15, 6.16, 6.17.
+
 References:
 - [Manning, Chap. 2 (2.2) and Chap. 6 (6.2, 6.3)](https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf)
 
@@ -169,7 +173,7 @@ References:
      - P = #(relevant items retrieved)/#(retrieved items) = P(relevant|retrieved)
    - Recall (R): Fraction of relevant documents that are retrieved:
      - R = #(relevant items retrieved)/#(relevant items) = P(retrieved|relevant)
-   - Interpolated Precision: At a certain recall level r, is defined as the highests precision found for any recall level r' >= r: 
+   - Interpolated Precision: At a certain recall level r, is defined as the highest precision found for any recall level r' >= r: 
      - pinterp(r) = max p(r'), so that r'>=r.
 
 2. What is precision at k, R-precision?
@@ -196,6 +200,8 @@ References:
 7. What is MAP, and how do you calculate it for a set of queries in a test collection?
    - Mean Average Precision provides a single-figure measure of quality across recall levels. Given a set of queries, the MAP is the mean over the Average Precision values.
 
+Exercises: 8.1, 8.4, 8.8, 8.9.
+
 References:
 - [Manning, Chap. 8](https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf)
 - [TREC Pages](http://trec.nist.gov/)
@@ -211,7 +217,12 @@ References:
 
 3. How do you index images? TODO:
 
-4. Give examples of ranking signals used by search engines. TODO:
+4. Give examples of ranking signals used by search engines.
+   - Ranking Signal/Factor: characteristic of a website that search engine algorithms might consider to calculate its rankings.
+   - HTML signals: titles, descriptions, headings, alt attributes, lists;
+   - Architecture signals: accessibility, page speed, URL structure, internal/outgoing links, error status codes;
+   - Social signals: social shares, reputation.
+
 
 5. What are the SCC, IN and OUT components in the view of the web as a bowtie?
    -  Bowtie shape: 3 major categories of web pages:
@@ -234,9 +245,20 @@ References:
 2. How is anchor text used in web search?
    - Anchor text is used to encode an hyperlink in the HTML code of a page.
 
-3. Calculate PageRank values for a set of linked documents. TODO:
+3. Calculate PageRank values for a set of linked documents.
+   - PageRank of a node is a value between 0 and 1.
+   - It is a query-independent value computed offline that only depends on the structure of the web graph.
+   - The algorithms models a random surfer who begins at a web page and, at each step, randomly chooses between the out-links to move to the next page. If the random surfer executes this "forever", he will visit some pages more frequently than others. The PageRank value of a pge represents this probability:
+   - PR(a) = q/T + (1-q)*(somatório de i=1 até n de)(PR(pi)/L(pi))
 
-4. Calculate Hub and Authority values for a set of linked documents. TODO:
+4. Calculate Hub and Authority values for a set of linked documents.
+   - Query-independent algorithm.
+   - Starts with the answer set (e.g. pages containing the keywords).
+   - Computes two scores for each page: authority score and hub score.
+     - Pages with many links pointing to them are called authorities.
+     - Pages with many outgoing links are called hubs.
+     - A(p) = (somatório v pertencente a S, v até p de)(H(v))
+     - H(p) = (somatório u pertencente a S, p até u de)(A(u))
 
 References:
 - [Manning, Chap. 21](https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf)
