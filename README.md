@@ -14,6 +14,6 @@
 
 ## Milestone 3
 
-[Report2](docs/M3/report-23.pdf)
+[Report3](docs/M3/report-23.pdf)
 
-[Slides2](docs/M3/demo-23.pdf)
+[Slides3](docs/M3/demo-23.pdf)
